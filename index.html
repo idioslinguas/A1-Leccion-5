@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idíoslinguas - Present Simple Mastery Studio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#16467d',
+                            blue: '#0077b6',
+                            teal: '#2a9d8f',
+                            yellow: '#ffb703',
+                            red: '#e63946',
+                            dark: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .animate-pulse-subtle {
+            animation: pulse-subtle 3s infinite ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="h-full font-sans text-slate-800 flex flex-col bg-slate-50 selection:bg-brand-teal selection:text-white">
+
+    <!-- Header Navbar -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('theory')">
+                    <div class="w-12 h-14 flex-shrink-0">
+                        <!-- Idíoslinguas SVG Logo -->
+                        <svg viewBox="0 0 500 560" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
+                                    <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+                                </filter>
+                            </defs>
+                            <g transform="translate(10, 20)">
+                                <path d="M 80,240 C 40,110 180,20 330,48 C 404,61 426,128 377,172 C 306,238 112,326 80,240 Z" fill="none" stroke="#e63946" stroke-width="17" stroke-linecap="round" />
+                                <path d="M 356,76 C 413,142 400,283 312,362 C 220,436 84,371 106,279" fill="none" stroke="#ffb703" stroke-width="15" stroke-linecap="round" />
+                                <path d="M 84,296 C 128,393 268,406 356,327" fill="none" stroke="#2a9d8f" stroke-width="15" stroke-linecap="round" />
+                                <g filter="url(#soft-shadow)">
+                                    <circle cx="230" cy="200" r="110" fill="#ffffff" stroke="#0077b6" stroke-width="11"/>
+                                    <ellipse cx="230" cy="200" rx="52" ry="110" fill="none" stroke="#0077b6" stroke-width="6"/>
+                                    <line x1="120" y1="200" x2="340" y2="200" stroke="#0077b6" stroke-width="6"/>
+                                    <line x1="142" y1="145" x2="318" y2="145" stroke="#0077b6" stroke-width="4.5"/>
+                                    <line x1="142" y1="255" x2="318" y2="255" stroke="#0077b6" stroke-width="4.5"/>
+                                </g>
+                                <g transform="translate(252, 118)">
+                                    <rect x="0" y="0" width="48" height="30" rx="4" fill="#b71c1c"/>
+                                    <path d="M 0,0 H 24 V 16 H 0 Z" fill="#0d47a1"/>
+                                    <line x1="0" y1="9" x2="48" y2="9" stroke="#ffffff" stroke-width="3"/>
+                                    <line x1="0" y1="18" x2="48" y2="18" stroke="#ffffff" stroke-width="3"/>
+                                    <line x1="0" y1="27" x2="48" y2="27" stroke="#ffffff" stroke-width="3"/>
+                                </g>
+                                <g transform="translate(110, 100)" filter="url(#soft-shadow)">
+                                    <path d="M 50,40 A 46,46 0 1 1 102,113 L 81,134 L 87,107 A 46,46 0 0 1 50,40 Z" fill="#0077b6"/>
+                                    <text x="75" y="88" font-family="Fredoka, sans-serif" font-weight="bold" font-size="44" fill="#ffffff" text-anchor="middle">i</text>
+                                </g>
+                                <g transform="translate(240, 150)" filter="url(#soft-shadow)">
+                                    <path d="M 45,35 A 42,42 0 1 1 87,102 L 81,119 L 64,100 A 42,42 0 0 1 45,35 Z" fill="#2a9d8f"/>
+                                    <text x="66" y="80" font-family="Fredoka, sans-serif" font-weight="bold" font-size="40" fill="#ffffff" text-anchor="middle">l</text>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-fredoka text-2xl font-bold tracking-tight text-brand-navy leading-none">
+                            idíos<span class="text-brand-blue">linguas</span>
+                        </div>
+                        <div class="text-[10px] font-bold tracking-widest text-brand-teal uppercase mt-0.5">
+                            ACADEMIA DE IDIOMAS
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Tabs -->
+                <nav class="hidden md:flex space-x-1 bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+                    <button id="nav-theory" onclick="switchTab('theory')" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-white text-brand-navy shadow-sm">
+                        <i class="fa-solid fa-book-open text-brand-teal"></i>
+                        <span>Gramática</span>
+                    </button>
+                    <button id="nav-exercises" onclick="switchTab('exercises')" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-navy transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-yellow"></i>
+                        <span>40 Ejercicios</span>
+                        <span id="badge-exercises" class="bg-slate-200 text-slate-700 text-xs px-2 py-0.5 rounded-full font-bold">0/40</span>
+                    </button>
+                    <button id="nav-translation" onclick="switchTab('translation')" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-navy transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-language text-brand-red"></i>
+                        <span>Traducción</span>
+                    </button>
+                    <button id="nav-reading" onclick="switchTab('reading')" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-navy transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-book-reader text-purple-600"></i>
+                        <span>Lectura A1</span>
+                    </button>
+                    <button id="nav-stats" onclick="switchTab('stats')" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-navy transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-amber-500"></i>
+                        <span>Progreso</span>
+                    </button>
+                </nav>
+
+                <!-- Header Stats Quick View -->
+                <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-xs">
+                        <i class="fa-solid fa-fire text-amber-500 text-sm"></i>
+                        <span id="header-streak">Racha: 1 día</span>
+                    </div>
+                    <div class="flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-800 px-3 py-1.5 rounded-full text-xs font-bold shadow-xs">
+                        <i class="fa-solid fa-star text-emerald-500 text-sm"></i>
+                        <span id="header-score">0 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Bar Bottom -->
+        <div class="md:hidden border-t border-slate-200 bg-white grid grid-cols-5 text-center text-[11px] py-2">
+            <button onclick="switchTab('theory')" class="mobile-tab flex flex-col items-center py-1 text-brand-navy font-bold">
+                <i class="fa-solid fa-book-open mb-1 text-sm"></i>
+                <span>Teoría</span>
+            </button>
+            <button onclick="switchTab('exercises')" class="mobile-tab flex flex-col items-center py-1 text-slate-500">
+                <i class="fa-solid fa-list-check mb-1 text-sm"></i>
+                <span>Ejercicios</span>
+            </button>
+            <button onclick="switchTab('translation')" class="mobile-tab flex flex-col items-center py-1 text-slate-500">
+                <i class="fa-solid fa-language mb-1 text-sm"></i>
+                <span>Traducción</span>
+            </button>
+            <button onclick="switchTab('reading')" class="mobile-tab flex flex-col items-center py-1 text-slate-500">
+                <i class="fa-solid fa-book-reader mb-1 text-sm text-purple-600"></i>
+                <span>Lectura</span>
+            </button>
+            <button onclick="switchTab('stats')" class="mobile-tab flex flex-col items-center py-1 text-slate-500">
+                <i class="fa-solid fa-trophy mb-1 text-sm"></i>
+                <span>Progreso</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+        <!-- TAB 1: GRAMMAR & THEORY -->
+        <section id="tab-theory-content" class="space-y-8 animate-fade-in">
+            <!-- Hero Banner -->
+            <div class="bg-gradient-to-r from-brand-navy via-brand-blue to-brand-teal rounded-3xl p-6 sm:p-10 text-white shadow-xl relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 opacity-15 w-80 h-80 pointer-events-none">
+                    <svg viewBox="0 0 500 560" class="w-full h-full fill-current text-white" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 80,240 C 40,110 180,20 330,48 C 404,61 426,128 377,172 C 306,238 112,326 80,240 Z" fill="none" stroke="currentColor" stroke-width="25"/>
+                        <circle cx="230" cy="200" r="110" fill="none" stroke="currentColor" stroke-width="15"/>
+                    </svg>
+                </div>
+
+                <div class="max-w-2xl relative z-10 space-y-4">
+                    <span class="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider text-amber-200">
+                        A1 - A2 English Level Masterclass
+                    </span>
+                    <h1 class="font-fredoka text-3xl sm:text-5xl font-bold leading-tight">
+                        Domina el Present Simple con <span class="text-brand-yellow">Idíoslinguas</span>
+                    </h1>
+                    <p class="text-slate-100 text-sm sm:text-base leading-relaxed">
+                        El <strong>Presente Simple</strong> se utiliza para hablar de rutinas, hábitos, hechos generales y estados permanentes. Aprende la regla de la tercera persona, conjugaciones afirmativas, negativas y preguntas.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <button onclick="switchTab('exercises')" class="bg-brand-yellow text-slate-900 font-bold px-5 py-2.5 rounded-xl hover:bg-amber-400 transition shadow-md flex items-center gap-2 text-xs sm:text-sm">
+                            <span>Ir a los 40 Ejercicios</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('reading')" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-5 py-2.5 rounded-xl transition shadow-md flex items-center gap-2 text-xs sm:text-sm">
+                            <span>Lectura A1 + Glosario</span>
+                            <i class="fa-solid fa-book-reader"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grammar Cards Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- 1. Affirmative Sentences -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+                            +
+                        </div>
+                        <div>
+                            <h3 class="font-fredoka text-xl font-bold text-slate-800">Oraciones Afirmativas</h3>
+                            <p class="text-xs text-slate-500">Sujeto + Verbo (base / -s / -es)</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold text-slate-800">I / You / We / They:</span>
+                            <p class="text-emerald-700 font-medium mt-1">"I <span class="underline decoration-emerald-500 font-bold">work</span> every day."</p>
+                            <p class="text-xs text-slate-500">(Yo trabajo todos los días)</p>
+                        </div>
+                        <div class="bg-emerald-50/60 p-3 rounded-xl border border-emerald-100">
+                            <span class="font-bold text-emerald-900">He / She / It (3ra Persona):</span>
+                            <p class="text-emerald-800 font-medium mt-1">"She <span class="underline decoration-emerald-600 font-bold">works</span> every day."</p>
+                            <p class="text-xs text-slate-600">(Ella trabaja todos los días)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs text-amber-900 flex gap-2 items-start">
+                        <i class="fa-solid fa-lightbulb text-amber-500 text-base mt-0.5"></i>
+                        <span>¡Atención! En afirmativo, solo añadimos <strong>-s / -es</strong> cuando el sujeto es <strong>He, She o It</strong>.</span>
+                    </div>
+                </div>
+
+                <!-- 2. Negative Sentences -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-lg font-bold">
+                            -
+                        </div>
+                        <div>
+                            <h3 class="font-fredoka text-xl font-bold text-slate-800">Oraciones Negativas</h3>
+                            <p class="text-xs text-slate-500">Sujeto + don't/doesn't + Verbo Base</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold text-slate-800">I / You / We / They + DON'T:</span>
+                            <p class="text-rose-700 font-medium mt-1">"They <span class="font-bold">don't like</span> coffee."</p>
+                            <p class="text-xs text-slate-500">(A ellos no les gusta el café)</p>
+                        </div>
+                        <div class="bg-rose-50/60 p-3 rounded-xl border border-rose-100">
+                            <span class="font-bold text-rose-900">He / She / It + DOESN'T:</span>
+                            <p class="text-rose-800 font-medium mt-1">"He <span class="font-bold">doesn't like</span> coffee."</p>
+                            <p class="text-xs text-slate-600">(A él no le gusta el café)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-rose-50 rounded-xl border border-rose-200 text-xs text-rose-900 flex gap-2 items-start">
+                        <i class="fa-solid fa-circle-exclamation text-rose-500 text-base mt-0.5"></i>
+                        <span>Regla de oro: Al usar <strong>doesn't</strong>, el verbo vuelve a su forma base (¡SIN 'S'!).</span>
+                    </div>
+                </div>
+
+                <!-- 3. Interrogative Sentences -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs space-y-4">
+                    <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-700 flex items-center justify-center text-lg font-bold">
+                            ?
+                        </div>
+                        <div>
+                            <h3 class="font-fredoka text-xl font-bold text-slate-800">Preguntas e Interrogación</h3>
+                            <p class="text-xs text-slate-500">Do / Does + Sujeto + Verbo Base ?</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-sm text-slate-600">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-100">
+                            <span class="font-bold text-slate-800">DO + (I, you, we, they):</span>
+                            <p class="text-sky-700 font-medium mt-1">"<span class="font-bold">Do you speak</span> English?"</p>
+                            <p class="text-xs text-slate-500">(¿Hablas tú inglés?)</p>
+                        </div>
+                        <div class="bg-sky-50/60 p-3 rounded-xl border border-sky-100">
+                            <span class="font-bold text-sky-900">DOES + (he, she, it):</span>
+                            <p class="text-sky-800 font-medium mt-1">"<span class="font-bold">Does she live</span> in Spain?"</p>
+                            <p class="text-xs text-slate-600">(¿Vive ella en España?)</p>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-sky-50 rounded-xl border border-sky-200 text-xs text-sky-900 flex gap-2 items-start">
+                        <i class="fa-solid fa-circle-info text-sky-500 text-base mt-0.5"></i>
+                        <span>Respuestas cortas: <em>Yes, I do / No, I don't. Yes, she does / No, she doesn't.</em></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Interactive Spelling Rules Table for 3rd Person Singular -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <h2 class="font-fredoka text-2xl font-bold text-brand-navy">
+                            Reglas de Ortografía: Tercera Persona Singular (He / She / It)
+                        </h2>
+                        <p class="text-slate-500 text-sm">
+                            Haz clic en los altavoces para escuchar la pronunciación en inglés.
+                        </p>
+                    </div>
+                    <span class="bg-brand-teal/10 text-brand-teal text-xs font-bold px-3 py-1.5 rounded-full self-start sm:self-auto">
+                        Grammar Matrix
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Rule 1: General + S -->
+                    <div class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-teal transition bg-slate-50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-800 text-sm">Regla General</span>
+                            <span class="bg-slate-200 text-slate-700 text-xs font-bold px-2 py-0.5 rounded-full">+ S</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-3">A la mayoría de los verbos se les agrega simplemente '-s'.</p>
+                        <ul class="text-sm space-y-1.5 text-slate-700 font-mono">
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>play &rarr; <strong class="text-brand-teal">plays</strong></span>
+                                <button onclick="speakText('plays')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>work &rarr; <strong class="text-brand-teal">works</strong></span>
+                                <button onclick="speakText('works')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>eat &rarr; <strong class="text-brand-teal">eats</strong></span>
+                                <button onclick="speakText('eats')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rule 2: Verbs ending in -o, -ch, -sh, -ss, -x, -z -->
+                    <div class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-blue transition bg-slate-50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-800 text-sm">Terminados en -o, -ch, -sh, -ss, -x</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-0.5 rounded-full">+ ES</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-3">Si termina en sonido sibilante o vocal 'o', agregamos '-es'.</p>
+                        <ul class="text-sm space-y-1.5 text-slate-700 font-mono">
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>watch &rarr; <strong class="text-brand-blue">watches</strong></span>
+                                <button onclick="speakText('watches')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>wash &rarr; <strong class="text-brand-blue">washes</strong></span>
+                                <button onclick="speakText('washes')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>go &rarr; <strong class="text-brand-blue">goes</strong></span>
+                                <button onclick="speakText('goes')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Rule 3: Consonant + Y -->
+                    <div class="border-2 border-slate-200 rounded-2xl p-4 hover:border-brand-red transition bg-slate-50">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-slate-800 text-sm">Consonante + Y</span>
+                            <span class="bg-rose-100 text-rose-800 text-xs font-bold px-2 py-0.5 rounded-full">-y &rarr; + IES</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-3">Cambiamos la 'y' por 'i' y agregamos '-es'.</p>
+                        <ul class="text-sm space-y-1.5 text-slate-700 font-mono">
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>study &rarr; <strong class="text-brand-red">studies</strong></span>
+                                <button onclick="speakText('studies')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>fly &rarr; <strong class="text-brand-red">flies</strong></span>
+                                <button onclick="speakText('flies')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                            <li class="flex justify-between bg-white px-2.5 py-1 rounded-lg border border-slate-100">
+                                <span>try &rarr; <strong class="text-brand-red">tries</strong></span>
+                                <button onclick="speakText('tries')" class="text-slate-400 hover:text-brand-navy"><i class="fa-solid fa-volume-high"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: 40 EXERCISES HUB -->
+        <section id="tab-exercises-content" class="hidden space-y-6 animate-fade-in">
+            <!-- Exercise Header & Controls -->
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="font-fredoka text-2xl font-bold text-brand-navy">40 Ejercicios de Presente Simple</h2>
+                        <span class="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-full border border-slate-200">
+                            Respuestas Equilibradas
+                        </span>
+                    </div>
+                    <p class="text-slate-500 text-sm mt-1">
+                        Responde las preguntas eligiendo la opción correcta. Las respuestas correctas están distribuidas aleatoriamente entre las 4 opciones.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                    <button onclick="checkAllExercises()" class="bg-brand-navy hover:bg-slate-800 text-white text-sm font-bold px-5 py-2.5 rounded-xl transition shadow-sm flex items-center gap-2">
+                        <i class="fa-solid fa-check-double text-emerald-400"></i>
+                        <span>Calificar Todo</span>
+                    </button>
+                    <button onclick="resetExercises()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-sm font-semibold px-4 py-2.5 rounded-xl transition flex items-center gap-2 border border-slate-200">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Reiniciar</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                <button onclick="filterExercises('all')" class="ex-filter-btn px-4 py-2 rounded-xl bg-brand-navy text-white shadow-xs" data-filter="all">
+                    Todos (40)
+                </button>
+                <button onclick="filterExercises('3rd-person')" class="ex-filter-btn px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-filter="3rd-person">
+                    1. Conjugación 3ª Persona (1-10)
+                </button>
+                <button onclick="filterExercises('aff-neg')" class="ex-filter-btn px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-filter="aff-neg">
+                    2. Afirmativo & Negativo (11-20)
+                </button>
+                <button onclick="filterExercises('questions')" class="ex-filter-btn px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-filter="questions">
+                    3. Preguntas Do/Does (21-30)
+                </button>
+                <button onclick="filterExercises('mixed')" class="ex-filter-btn px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 border border-slate-200" data-filter="mixed">
+                    4. Desafío Mixto (31-40)
+                </button>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-xs space-y-2">
+                <div class="flex justify-between text-xs font-bold text-slate-600">
+                    <span>Progreso de Resolución:</span>
+                    <span id="ex-progress-text">0 de 40 Resueltos Correctamente</span>
+                </div>
+                <div class="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
+                    <div id="ex-progress-bar" class="bg-gradient-to-r from-brand-teal to-brand-blue h-full w-0 transition-all duration-500"></div>
+                </div>
+            </div>
+
+            <!-- Exercises Container (Dynamic Injection) -->
+            <div id="exercises-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Javascript populates 40 cards here -->
+            </div>
+        </section>
+
+        <!-- TAB 3: TRANSLATION STUDIO -->
+        <section id="tab-translation-content" class="hidden space-y-6 animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="bg-brand-red/10 text-brand-red font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                            Interactive Studio
+                        </span>
+                        <h2 class="font-fredoka text-3xl font-bold text-brand-navy mt-1">
+                            Taller de Construcción y Traducción
+                        </h2>
+                        <p class="text-slate-500 text-sm">
+                            Las fichas de palabras se presentan totalmente desordenadas. Selecciónalas en el orden correcto para construir la oración.
+                        </p>
+                    </div>
+
+                    <!-- Translation score & streak -->
+                    <div class="flex items-center gap-3 self-end sm:self-auto">
+                        <div class="bg-slate-100 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700 flex items-center gap-2">
+                            <span>Pregunta:</span>
+                            <span id="trans-current-idx" class="text-brand-blue text-sm">1 / 15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Translation Card -->
+                <div id="translation-card" class="bg-slate-50 rounded-2xl p-6 border-2 border-slate-200 space-y-6">
+                    <!-- Target Sentence to Translate -->
+                    <div class="text-center space-y-2 py-4 border-b border-slate-200">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Oración en Español</span>
+                        <h3 id="trans-spanish-text" class="font-fredoka text-2xl sm:text-3xl font-bold text-slate-800">
+                            Cargando oración...
+                        </h3>
+                        <p id="trans-hint" class="text-xs text-brand-teal font-medium">
+                            Pista: Usa la regla de 3ra persona.
+                        </p>
+                    </div>
+
+                    <!-- Answer Drop / Build Area -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">
+                            Tu Construcción en Inglés:
+                        </label>
+                        <div id="trans-build-zone" class="min-h-[60px] bg-white border-2 border-dashed border-slate-300 rounded-2xl p-3 flex flex-wrap gap-2 items-center justify-start transition">
+                            <span id="trans-placeholder" class="text-slate-400 text-sm italic">
+                                Haz clic en las fichas desordenadas para armar la oración...
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Available Word Chips -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider">
+                                Banco de Fichas (Orden Aleatorio):
+                            </label>
+                            <button onclick="clearTranslationBuild()" class="text-xs text-rose-600 hover:text-rose-800 font-semibold flex items-center gap-1">
+                                <i class="fa-solid fa-eraser"></i> Limpiar
+                            </button>
+                        </div>
+                        <div id="trans-word-bank" class="flex flex-wrap gap-2 p-3 bg-white/60 rounded-2xl border border-slate-200">
+                            <!-- Chips injected via JS in randomized order -->
+                        </div>
+                    </div>
+
+                    <!-- Direct Typing Option Toggle -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="w-full sm:w-auto">
+                            <button onclick="toggleTypingMode()" id="toggle-mode-btn" class="text-xs font-semibold text-brand-blue hover:underline flex items-center gap-1.5">
+                                <i class="fa-solid fa-keyboard"></i>
+                                <span>¿Prefieres escribir directamente con el teclado?</span>
+                            </button>
+                            <input type="text" id="trans-direct-input" placeholder="Escribe la oración en inglés aquí..." class="hidden w-full mt-2 px-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-blue">
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+                            <button onclick="checkTranslationAnswer()" class="w-full sm:w-auto bg-brand-teal hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-md flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Comprobar Respuesta</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Box -->
+                    <div id="trans-feedback-box" class="hidden p-4 rounded-xl border space-y-2 text-sm">
+                        <div class="flex items-center justify-between">
+                            <div id="trans-feedback-title" class="font-bold flex items-center gap-2"></div>
+                            <button id="trans-audio-btn" onclick="playTranslationAudio()" class="text-xs font-bold px-3 py-1 rounded-lg bg-white/80 hover:bg-white text-slate-700 shadow-xs flex items-center gap-1.5">
+                                <i class="fa-solid fa-volume-high text-brand-blue"></i>
+                                <span>Escuchar en Inglés</span>
+                            </button>
+                        </div>
+                        <p id="trans-feedback-msg" class="text-xs leading-relaxed"></p>
+                        <div class="pt-2">
+                            <button onclick="nextTranslationSentence()" class="bg-brand-navy hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition flex items-center gap-1.5">
+                                <span>Siguiente Oración</span>
+                                <i class="fa-solid fa-chevron-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: READING & GLOSSARY (Nivel A1) -->
+        <section id="tab-reading-content" class="hidden space-y-8 animate-fade-in">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-purple-800 via-purple-600 to-indigo-600 rounded-3xl p-6 sm:p-8 text-white shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div class="space-y-2 max-w-2xl">
+                    <span class="bg-white/20 backdrop-blur-md text-amber-300 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider">
+                        A1 Reading Comprehension & Glossary
+                    </span>
+                    <h2 class="font-fredoka text-3xl sm:text-4xl font-bold">
+                        A Day in the Life of Sarah
+                    </h2>
+                    <p class="text-purple-100 text-xs sm:text-sm leading-relaxed">
+                        Lee la historia en inglés adaptada para nivel principiante (A1). Explora el glosario interactivo de vocabulario y responde las 10 preguntas de comprensión lectora.
+                    </p>
+                </div>
+                <button onclick="speakText(document.getElementById('reading-text-body').innerText)" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-bold px-5 py-3 rounded-2xl shadow-md transition flex items-center gap-2 text-xs sm:text-sm whitespace-nowrap">
+                    <i class="fa-solid fa-headphones text-lg"></i>
+                    <span>Escuchar Texto Completo</span>
+                </button>
+            </div>
+
+            <!-- Reading Text Card -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <div class="flex items-center gap-2 text-purple-700 font-fredoka text-xl font-bold">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <span>Reading Text (Level A1)</span>
+                    </div>
+                    <span class="text-xs bg-purple-50 text-purple-700 font-bold px-3 py-1 rounded-full border border-purple-100">
+                        Present Simple in Context
+                    </span>
+                </div>
+
+                <div id="reading-text-body" class="prose prose-slate max-w-none text-slate-700 text-base leading-relaxed space-y-4 font-sans">
+                    <p class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        <strong class="text-purple-800 font-bold">Sarah</strong> is 28 years old and she <span class="bg-amber-100 font-semibold px-1 rounded">works</span> as a wildlife photographer in Kenya. She <span class="bg-amber-100 font-semibold px-1 rounded">loves</span> animals and nature. Every morning, Sarah <span class="bg-amber-100 font-semibold px-1 rounded">gets up</span> at 5:30 AM. She <span class="bg-amber-100 font-semibold px-1 rounded">drinks</span> a cup of hot tea and <span class="bg-amber-100 font-semibold px-1 rounded">eats</span> fruit for breakfast.
+                    </p>
+                    <p class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        At 6:15 AM, she <span class="bg-amber-100 font-semibold px-1 rounded">packs</span> her camera equipment, <span class="bg-amber-100 font-semibold px-1 rounded">gets into</span> her green jeep, and <span class="bg-amber-100 font-semibold px-1 rounded">drives</span> into the savannah before sunrise. Wild animals, like lions, elephants, and giraffes, <span class="bg-amber-100 font-semibold px-1 rounded">are</span> very active early in the morning. Sarah <span class="bg-amber-100 font-semibold px-1 rounded">takes</span> hundreds of beautiful photos every day.
+                    </p>
+                    <p class="bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                        She <span class="bg-rose-100 font-semibold px-1 rounded text-rose-800">does not return</span> to her camp until 6:00 PM. In the evening, she <span class="bg-amber-100 font-semibold px-1 rounded">edits</span> her photographs on her laptop and <span class="bg-amber-100 font-semibold px-1 rounded">chats</span> with her team. She <span class="bg-amber-100 font-semibold px-1 rounded">goes</span> to bed early because she <span class="bg-amber-100 font-semibold px-1 rounded">starts</span> work early again the next day. Sarah <span class="bg-amber-100 font-semibold px-1 rounded">is</span> very happy with her job!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Student Glossary Section -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+                    <div class="flex items-center gap-2 text-brand-teal font-fredoka text-xl font-bold">
+                        <i class="fa-solid fa-spell-check"></i>
+                        <span>Student Glossary / Glosario para el Estudiante</span>
+                    </div>
+                    <span class="text-xs bg-teal-50 text-brand-teal font-bold px-3 py-1 rounded-full border border-teal-100">
+                        10 Clave Words
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Word 1 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Wildlife Photographer</h4>
+                            <button onclick="speakText('Wildlife photographer')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Fotógrafo(a) de vida silvestre</p>
+                        <p class="text-[11px] text-slate-500 italic">"Sarah works as a wildlife photographer."</p>
+                    </div>
+
+                    <!-- Word 2 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Gets up</h4>
+                            <button onclick="speakText('gets up')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Se levanta (de la cama)</p>
+                        <p class="text-[11px] text-slate-500 italic">"She gets up at 5:30 AM."</p>
+                    </div>
+
+                    <!-- Word 3 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Packs</h4>
+                            <button onclick="speakText('packs')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Empaca / Guarda equipo</p>
+                        <p class="text-[11px] text-slate-500 italic">"She packs her camera equipment."</p>
+                    </div>
+
+                    <!-- Word 4 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Savannah</h4>
+                            <button onclick="speakText('savannah')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Sabana (Ecosistema de llanura)</p>
+                        <p class="text-[11px] text-slate-500 italic">"She drives into the savannah."</p>
+                    </div>
+
+                    <!-- Word 5 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Sunrise</h4>
+                            <button onclick="speakText('sunrise')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Amanecer / Salida del sol</p>
+                        <p class="text-[11px] text-slate-500 italic">"Before sunrise."</p>
+                    </div>
+
+                    <!-- Word 6 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Early</h4>
+                            <button onclick="speakText('early')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Temprano</p>
+                        <p class="text-[11px] text-slate-500 italic">"Early in the morning."</p>
+                    </div>
+
+                    <!-- Word 7 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Takes photos</h4>
+                            <button onclick="speakText('takes photos')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Toma fotografías</p>
+                        <p class="text-[11px] text-slate-500 italic">"She takes hundreds of photos."</p>
+                    </div>
+
+                    <!-- Word 8 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Camp</h4>
+                            <button onclick="speakText('camp')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Campamento</p>
+                        <p class="text-[11px] text-slate-500 italic">"She returns to her camp."</p>
+                    </div>
+
+                    <!-- Word 9 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Edits</h4>
+                            <button onclick="speakText('edits')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Edita (imágenes/archivos)</p>
+                        <p class="text-[11px] text-slate-500 italic">"She edits her photographs."</p>
+                    </div>
+
+                    <!-- Word 10 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 hover:border-brand-teal transition space-y-1 sm:col-span-2 lg:col-span-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="font-bold text-brand-navy text-sm">Chats</h4>
+                            <button onclick="speakText('chats')" class="text-slate-400 hover:text-brand-blue"><i class="fa-solid fa-volume-high"></i></button>
+                        </div>
+                        <p class="text-xs text-brand-teal font-semibold">Conversa / Chatea</p>
+                        <p class="text-[11px] text-slate-500 italic">"She chats with her team."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10 Reading Comprehension Questions (In English) -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-6">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <h3 class="font-fredoka text-2xl font-bold text-brand-navy">
+                            10 Reading Comprehension Questions
+                        </h3>
+                        <p class="text-slate-500 text-sm">
+                            Answer the questions in English based on the reading text above.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <button onclick="checkReadingAnswers()" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-4 py-2 rounded-xl text-xs transition shadow-sm flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <span>Check Answers</span>
+                        </button>
+                        <button onclick="resetReadingAnswers()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold px-3 py-2 rounded-xl text-xs transition border border-slate-200">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Questions Container -->
+                <div id="reading-questions-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Javascript populates 10 reading comprehension cards -->
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: MY PROGRESS & STATS -->
+        <section id="tab-stats-content" class="hidden space-y-8 animate-fade-in">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-8">
+                <!-- Header -->
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-100 pb-4">
+                    <div>
+                        <h2 class="font-fredoka text-3xl font-bold text-brand-navy">
+                            Mi Progreso Gramatical
+                        </h2>
+                        <p class="text-slate-500 text-sm">
+                            Consulta tus estadísticas de aprendizaje, ejercicios completados y racha actual.
+                        </p>
+                    </div>
+                    <button onclick="resetAllProgress()" class="text-xs font-bold text-rose-600 hover:text-rose-800 bg-rose-50 border border-rose-200 px-3 py-2 rounded-xl transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span>Reiniciar Todo el Progreso</span>
+                    </button>
+                </div>
+
+                <!-- Stats Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Card 1 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-blue text-white flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-check-to-slot"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Ejercicios listos</span>
+                            <h4 id="stat-completed-count" class="font-fredoka text-2xl font-bold text-slate-800">0 / 40</h4>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-teal text-white flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Precisión Global</span>
+                            <h4 id="stat-accuracy" class="font-fredoka text-2xl font-bold text-slate-800">0%</h4>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-brand-yellow text-slate-900 flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Días en Racha</span>
+                            <h4 id="stat-streak-days" class="font-fredoka text-2xl font-bold text-slate-800">1 Día</h4>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-100 p-5 rounded-2xl flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center text-xl shadow-md">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-slate-500 uppercase">Lectura A1</span>
+                            <h4 id="stat-reading-count" class="font-fredoka text-2xl font-bold text-slate-800">0 / 10</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Printable Certificate Section -->
+                <div class="border-2 border-dashed border-brand-teal/40 rounded-3xl p-6 sm:p-8 bg-slate-50 text-center space-y-4">
+                    <div class="w-16 h-16 bg-brand-teal/10 text-brand-teal rounded-full flex items-center justify-center mx-auto text-2xl">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <div class="max-w-xl mx-auto space-y-2">
+                        <h3 class="font-fredoka text-2xl font-bold text-slate-800">
+                            Certificado de Dominio del Presente Simple
+                        </h3>
+                        <p class="text-slate-600 text-sm">
+                            Completa al menos 30 ejercicios correctamente y resuelve las traducciones y comprensión de lectura para desbloquear tu diploma oficial emitido por <strong>Idíoslinguas Academia de Idiomas</strong>.
+                        </p>
+                    </div>
+
+                    <div id="certificate-status" class="pt-2">
+                        <button id="cert-download-btn" disabled onclick="printCertificate()" class="bg-slate-300 text-slate-500 font-bold px-6 py-3 rounded-xl transition cursor-not-allowed flex items-center gap-2 mx-auto text-xs sm:text-sm">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Desbloquear Certificado (Requiere 75%+)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 mt-12 py-6 text-slate-500 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2 font-fredoka text-brand-navy font-bold text-sm">
+                <span>idíoslinguas</span>
+                <span class="text-slate-400 font-normal">| Academia de Idiomas</span>
+            </div>
+            <p>© 2026 Idíoslinguas - Aplicación Interactiva de Presente Simple en Inglés.</p>
+            <div class="flex gap-4">
+                <a href="#" onclick="switchTab('theory'); return false;" class="hover:underline">Teoría</a>
+                <a href="#" onclick="switchTab('exercises'); return false;" class="hover:underline">Ejercicios</a>
+                <a href="#" onclick="switchTab('translation'); return false;" class="hover:underline">Traducción</a>
+                <a href="#" onclick="switchTab('reading'); return false;" class="hover:underline">Lectura</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // -------------------------------------------------------------
+        // EXERCISES DATABASE (40 Varied Exercises with Balanced Options)
+        // -------------------------------------------------------------
+        // The answers are balanced evenly across option indices 0, 1, 2, and 3
+        const EXERCISES_DATA = [
+            // Category 1: 3rd Person Singular Spelling Rules (1 - 10)
+            { id: 1, category: '3rd-person', type: 'choice', question: 'He _____ (watch) TV every evening.', options: ['watch', 'watches', 'watchs', 'watching'], answer: 'watches', hint: 'Verbo termina en -ch, se agrega -es.' },
+            { id: 2, category: '3rd-person', type: 'choice', question: 'She _____ (study) French at university.', options: ['studys', 'study', 'studies', 'studying'], answer: 'studies', hint: 'Consonante + Y cambia a -ies.' },
+            { id: 3, category: '3rd-person', type: 'choice', question: 'My brother _____ (play) guitar in a band.', options: ['playes', 'play', 'plaies', 'plays'], answer: 'plays', hint: 'Vocal + Y solo agrega -s.' },
+            { id: 4, category: '3rd-person', type: 'choice', question: 'The mechanic _____ (fix) cars in the garage.', options: ['fixes', 'fixs', 'fixies', 'fixing'], answer: 'fixes', hint: 'Termina en -x, agrega -es.' },
+            { id: 5, category: '3rd-person', type: 'choice', question: 'My mother _____ (go) to the supermarket on Saturdays.', options: ['gos', 'go', 'going', 'goes'], answer: 'goes', hint: 'Verbo "go" toma la forma "goes".' },
+            { id: 6, category: '3rd-person', type: 'choice', question: 'The baby _____ (cry) when he is hungry.', options: ['crys', 'cryes', 'cries', 'crying'], answer: 'cries', hint: 'Consonante + Y cambia a -ies.' },
+            { id: 7, category: '3rd-person', type: 'choice', question: 'He _____ (wash) his car every Sunday morning.', options: ['washs', 'washes', 'washies', 'wash'], answer: 'washes', hint: 'Termina en -sh, agrega -es.' },
+            { id: 8, category: '3rd-person', type: 'choice', question: 'A teacher _____ (teach) students new subjects.', options: ['teachs', 'teachies', 'teach', 'teaches'], answer: 'teaches', hint: 'Termina en -ch, agrega -es.' },
+            { id: 9, category: '3rd-person', type: 'choice', question: 'She _____ (kiss) her daughter before going to work.', options: ['kisses', 'kisss', 'kissies', 'kiss'], answer: 'kisses', hint: 'Termina en -ss, agrega -es.' },
+            { id: 10, category: '3rd-person', type: 'choice', question: 'The bee _____ (buzz) around the flowers.', options: ['buzzs', 'buzzies', 'buzzes', 'buzz'], answer: 'buzzes', hint: 'Termina en -z, agrega -es.' },
+
+            // Category 2: Affirmative vs Negative (11 - 20)
+            { id: 11, category: 'aff-neg', type: 'choice', question: 'I _____ (not / eat) meat because I am vegetarian.', options: ["doesn't eat", "not eat", "am not eat", "don't eat"], answer: "don't eat", hint: 'Sujeto "I" usa el auxiliar "don\'t".' },
+            { id: 12, category: 'aff-neg', type: 'choice', question: 'Carlos _____ (not / live) in Madrid; he lives in Barcelona.', options: ["don't live", "doesn't live", "doesn't lives", "not lives"], answer: "doesn't live", hint: 'Carlos (He) usa "doesn\'t" + verbo base.' },
+            { id: 13, category: 'aff-neg', type: 'choice', question: 'We _____ (enjoy) reading books in our free time.', options: ['enjoys', 'enjoying', 'enjoy', 'are enjoy'], answer: 'enjoy', hint: 'Sujeto "We" usa la forma base del verbo.' },
+            { id: 14, category: 'aff-neg', type: 'choice', question: 'They _____ (not / like) cold weather.', options: ["don't like", "doesn't like", "don't likes", "not like"], answer: "don't like", hint: 'Sujeto "They" usa "don\'t".' },
+            { id: 15, category: 'aff-neg', type: 'choice', question: 'Sarah _____ (speak) three languages fluently.', options: ['speak', 'speakes', 'speaking', 'speaks'], answer: 'speaks', hint: 'Sarah (She) requiere -s final en afirmativo.' },
+            { id: 16, category: 'aff-neg', type: 'choice', question: 'My parents _____ (not / work) on Sundays.', options: ["doesn't work", "don't work", "don't works", "not working"], answer: "don't work", hint: 'My parents (They) es plural, usa "don\'t".' },
+            { id: 17, category: 'aff-neg', type: 'choice', question: 'The train _____ (leave) at 8:00 AM every day.', options: ['leave', 'leavees', 'leaves', 'is leave'], answer: 'leaves', hint: 'The train (It) lleva -s final.' },
+            { id: 18, category: 'aff-neg', type: 'choice', question: 'It _____ (not / rain) very often in summer.', options: ["don't rain", "not rain", "doesn't rains", "doesn't rain"], answer: "doesn't rain", hint: 'Sujeto "It" requiere "doesn\'t" + verbo base.' },
+            { id: 19, category: 'aff-neg', type: 'choice', question: 'You _____ (know) the answer to this question.', options: ['knows', 'know', 'knowes', 'are know'], answer: 'know', hint: 'Sujeto "You" usa la forma base.' },
+            { id: 20, category: 'aff-neg', type: 'choice', question: 'My cat _____ (not / sleep) on the bed.', options: ["don't sleep", "doesn't sleep", "doesn't sleeps", "not sleeps"], answer: "doesn't sleep", hint: 'My cat (It) usa "doesn\'t".' },
+
+            // Category 3: Questions Do / Does (21 - 30)
+            { id: 21, category: 'questions', type: 'choice', question: '_____ you play video games on weekends?', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Do', hint: 'Sujeto "you" se pregunta con "Do".' },
+            { id: 22, category: 'questions', type: 'choice', question: '_____ your sister work at the hospital?', options: ['Do', 'Is', 'Does', 'Are'], answer: 'Does', hint: 'Your sister (She) requiere "Does".' },
+            { id: 23, category: 'questions', type: 'choice', question: 'Where _____ they buy their groceries?', options: ['does', 'are', 'is', 'do'], answer: 'do', hint: 'Sujeto "they" usa auxiliar "do".' },
+            { id: 24, category: 'questions', type: 'choice', question: 'What time _____ the bus arrive?', options: ['does', 'do', 'is', 'are'], answer: 'does', hint: 'The bus (It) usa auxiliar "does".' },
+            { id: 25, category: 'questions', type: 'choice', question: '_____ he speak German?', options: ['Do', 'Is', 'Has', 'Does'], answer: 'Does', hint: 'Sujeto "he" usa auxiliar "Does".' },
+            { id: 26, category: 'questions', type: 'choice', question: '_____ your friends like Italian food?', options: ['Does', 'Do', 'Are', 'Is'], answer: 'Do', hint: 'Your friends (They) es plural, usa "Do".' },
+            { id: 27, category: 'questions', type: 'choice', question: 'Why _____ you want to learn English?', options: ['does', 'are', 'do', 'is'], answer: 'do', hint: 'Sujeto "you" usa "do".' },
+            { id: 28, category: 'questions', type: 'choice', question: '_____ the sun shine at night?', options: ['Do', 'Does', 'Is', 'Are'], answer: 'Does', hint: 'The sun (It) se pregunta con "Does".' },
+            { id: 29, category: 'questions', type: 'choice', question: 'How often _____ she exercise?', options: ['do', 'is', 'has', 'does'], answer: 'does', hint: 'Sujeto "she" usa "does".' },
+            { id: 30, category: 'questions', type: 'choice', question: '_____ we have a test today?', options: ['Does', 'Are', 'Do', 'Is'], answer: 'Do', hint: 'Sujeto "we" usa auxiliar "Do".' },
+
+            // Category 4: Mixed Challenge (31 - 40)
+            { id: 31, category: 'mixed', type: 'choice', question: 'I always _____ (get up) early in the morning.', options: ['gets up', 'get up', 'getting up', 'get ups'], answer: 'get up', hint: 'Adverbio de frecuencia + forma base para "I".' },
+            { id: 32, category: 'mixed', type: 'choice', question: 'My father _____ (be) a famous architect.', options: ['are', 'am', 'is', 'does be'], answer: 'is', hint: 'Verbo To Be para "My father" (He) es "is".' },
+            { id: 33, category: 'mixed', type: 'choice', question: 'They _____ (be not) happy with the results.', options: ["isn't", "don't be", "doesn't be", "aren't"], answer: "aren't", hint: 'Verbo To Be negativo para "They" es "aren\'t".' },
+            { id: 34, category: 'mixed', type: 'choice', question: 'She usually _____ (have) breakfast at 7:30 AM.', options: ['has', 'haves', 'have', 'having'], answer: 'has', hint: 'Tercera persona singular del verbo "have" es "has".' },
+            { id: 35, category: 'mixed', type: 'choice', question: '_____ your father a teacher?', options: ['Does', 'Is', 'Do', 'Are'], answer: 'Is', hint: 'Pregunta con verbo To Be para "your father".' },
+            { id: 36, category: 'mixed', type: 'choice', question: 'Tom never _____ (forget) his keys.', options: ['forget', 'forgetes', 'forgets', 'forgetting'], answer: 'forgets', hint: 'Tom (He) lleva -s en afirmativo.' },
+            { id: 37, category: 'mixed', type: 'choice', question: 'Which sentence is CORRECT?', options: ['She don\'t like tea.', 'She doesn\'t likes tea.', 'She no likes tea.', 'She doesn\'t like tea.'], answer: 'She doesn\'t like tea.', hint: 'Doesn\'t + verbo sin \'s\'.' },
+            { id: 38, category: 'mixed', type: 'choice', question: 'Which sentence is CORRECT?', options: ['Does he live in London?', 'Do he live in London?', 'Does he lives in London?', 'Is he live in London?'], answer: 'Does he live in London?', hint: 'Does + sujeto + verbo base.' },
+            { id: 39, category: 'mixed', type: 'choice', question: 'Water _____ (boil) at 100 degrees Celsius.', options: ['boil', 'boiles', 'is boil', 'boils'], answer: 'boils', hint: 'Verdad general: Water (It) &rarr; boils.' },
+            { id: 40, category: 'mixed', type: 'choice', question: 'We _____ (not / have) much homework today.', options: ["don't have", "doesn't have", "haven't", "don't has"], answer: "don't have", hint: 'We + don\'t + have.' }
+        ];
+
+        // -------------------------------------------------------------
+        // TRANSLATION DATA STUDIO (15 Sentences)
+        // -------------------------------------------------------------
+        const TRANSLATION_DATA = [
+            {
+                id: 1,
+                spanish: "Ella trabaja en un hospital todos los días.",
+                english: "She works in a hospital every day",
+                words: ["She", "works", "in", "a", "hospital", "every", "day", "work", "at"],
+                hint: "Usa la regla de la 3ra persona singular (+s en 'works')."
+            },
+            {
+                id: 2,
+                spanish: "Yo no tomo café por la noche.",
+                english: "I do not drink coffee at night",
+                altEnglish: "I don't drink coffee at night",
+                words: ["I", "don't", "drink", "coffee", "at", "night", "doesn't", "drinks"],
+                hint: "Para 'Yo' en negativo usa 'don't' o 'do not'."
+            },
+            {
+                id: 3,
+                spanish: "¿Hablas inglés con tus amigos?",
+                english: "Do you speak English with your friends",
+                words: ["Do", "you", "speak", "English", "with", "your", "friends", "Does", "speaks"],
+                hint: "Inicia la pregunta con el auxiliar 'Do'."
+            },
+            {
+                id: 4,
+                spanish: "Él ve televisión después de cenar.",
+                english: "He watches TV after dinner",
+                words: ["He", "watches", "TV", "after", "dinner", "watch", "a"],
+                hint: "Verbo 'watch' en 3ra persona se convierte en 'watches'."
+            },
+            {
+                id: 5,
+                spanish: "Nosotros no vivimos en esta ciudad.",
+                english: "We do not live in this city",
+                altEnglish: "We don't live in this city",
+                words: ["We", "don't", "live", "in", "this", "city", "doesn't", "lives"],
+                hint: "Usa 'don't' para la negativa con 'We'."
+            },
+            {
+                id: 6,
+                spanish: "¿Dónde estudia tu hermano?",
+                english: "Where does your brother study",
+                words: ["Where", "does", "your", "brother", "study", "do", "studies"],
+                hint: "Palabra interrogativa 'Where' + 'does' + sujeto."
+            },
+            {
+                id: 7,
+                spanish: "Mi perro siempre corre en el parque.",
+                english: "My dog always runs in the park",
+                words: ["My", "dog", "always", "runs", "in", "the", "park", "run", "at"],
+                hint: "El perro es 3ra persona (It), añade -s a 'run'."
+            },
+            {
+                id: 8,
+                spanish: "A ellos no les gusta la comida picante.",
+                english: "They do not like spicy food",
+                altEnglish: "They don't like spicy food",
+                words: ["They", "don't", "like", "spicy", "food", "doesn't", "likes"],
+                hint: "Estructura: They + don't + like..."
+            },
+            {
+                id: 9,
+                spanish: "¿A qué hora llega el autobús?",
+                english: "What time does the bus arrive",
+                words: ["What", "time", "does", "the", "bus", "arrive", "do", "arrives"],
+                hint: "The bus es equivalente a 'It', requiere 'does'."
+            },
+            {
+                id: 10,
+                spanish: "María enseña matemáticas los lunes.",
+                english: "Maria teaches math on Mondays",
+                altEnglish: "Maria teaches mathematics on Mondays",
+                words: ["Maria", "teaches", "math", "on", "Mondays", "teach", "at"],
+                hint: "'teach' termina en -ch &rarr; 'teaches'."
+            },
+            {
+                id: 11,
+                spanish: "Mi padre es un buen médico.",
+                english: "My father is a good doctor",
+                words: ["My", "father", "is", "a", "good", "doctor", "does", "be"],
+                hint: "Usa el verbo To Be ('is'), no auxiliares."
+            },
+            {
+                id: 12,
+                spanish: "¿Por qué no comes verduras?",
+                english: "Why do you not eat vegetables",
+                altEnglish: "Why don't you eat vegetables",
+                words: ["Why", "don't", "you", "eat", "vegetables", "doesn't", "eats"],
+                hint: "Pregunta negativa: Why + don't + you + verb?"
+            },
+            {
+                id: 13,
+                spanish: "El tren sale a las ocho de la mañana.",
+                english: "The train leaves at eight in the morning",
+                words: ["The", "train", "leaves", "at", "eight", "in", "the", "morning", "leave"],
+                hint: "The train = It, por lo tanto 'leaves'."
+            },
+            {
+                id: 14,
+                spanish: "Carlos estudia mucho antes de un examen.",
+                english: "Carlos studies a lot before an exam",
+                words: ["Carlos", "studies", "a", "lot", "before", "an", "exam", "studys"],
+                hint: "study &rarr; studies (cambia Y por IES)."
+            },
+            {
+                id: 15,
+                spanish: "¿Tienes tú una mascota en casa?",
+                english: "Do you have a pet at home",
+                words: ["Do", "you", "have", "a", "pet", "at", "home", "Does", "has"],
+                hint: "Usa 'Do you have...'"
+            }
+        ];
+
+        // -------------------------------------------------------------
+        // READING COMPREHENSION QUESTIONS (10 Questions in English)
+        // -------------------------------------------------------------
+        const READING_QUESTIONS = [
+            {
+                id: 1,
+                question: "1. What is Sarah's job?",
+                options: ["She is a safari guide", "She is a wildlife photographer", "She is a veterinarian", "She is a doctor"],
+                answer: "She is a wildlife photographer",
+                explanation: "The text states: 'Sarah is 28 years old and she works as a wildlife photographer in Kenya.'"
+            },
+            {
+                id: 2,
+                question: "2. What time does Sarah get up in the morning?",
+                options: ["At 6:15 AM", "At 6:00 PM", "At 5:30 AM", "At 7:00 AM"],
+                answer: "At 5:30 AM",
+                explanation: "Paragraph 1 says: 'Every morning, Sarah gets up at 5:30 AM.'"
+            },
+            {
+                id: 3,
+                question: "3. What does Sarah eat and drink for breakfast?",
+                options: ["Coffee and bread", "Black tea and eggs", "Hot tea and fruit", "Milk and cereal"],
+                answer: "Hot tea and fruit",
+                explanation: "The text says: 'She drinks a cup of hot tea and eats fruit for breakfast.'"
+            },
+            {
+                id: 4,
+                question: "4. Where does Sarah drive her green jeep?",
+                options: ["Into the city", "Into the savannah", "To the airport", "To the mountain"],
+                answer: "Into the savannah",
+                explanation: "Paragraph 2 states: '...gets into her green jeep, and drives into the savannah before sunrise.'"
+            },
+            {
+                id: 5,
+                question: "5. Why does Sarah go out into the savannah early in the morning?",
+                options: ["Because the weather is cold", "Because animals are very active early", "Because she sleeps in the jeep", "Because traffic is light"],
+                answer: "Because animals are very active early",
+                explanation: "The text mentions: 'Wild animals... are very active early in the morning.'"
+            },
+            {
+                id: 6,
+                question: "6. Which animals are mentioned in the reading text?",
+                options: ["Tigers, bears, and zebras", "Lions, elephants, and giraffes", "Monkeys, snakes, and birds", "Dogs, cats, and horses"],
+                answer: "Lions, elephants, and giraffes",
+                explanation: "Paragraph 2 lists: 'like lions, elephants, and giraffes'."
+            },
+            {
+                id: 7,
+                question: "7. Does Sarah return to her camp at noon?",
+                options: ["Yes, she returns at 12:00 PM", "No, she does not return until 6:00 PM", "Yes, she eats lunch at camp", "No, she stays there for 3 days"],
+                answer: "No, she does not return until 6:00 PM",
+                explanation: "Paragraph 3 clearly states: 'She does not return to her camp until 6:00 PM.'"
+            },
+            {
+                id: 8,
+                question: "8. What does Sarah do in the evening on her laptop?",
+                options: ["She plays video games", "She edits her photographs", "She watches movies", "She writes a book"],
+                answer: "She edits her photographs",
+                explanation: "Paragraph 3 says: 'she edits her photographs on her laptop and chats with her team.'"
+            },
+            {
+                id: 9,
+                question: "9. Why does Sarah go to bed early?",
+                options: ["Because she is bored", "Because she starts work early again the next day", "Because she has no internet", "Because her team tells her to"],
+                answer: "Because she starts work early again the next day",
+                explanation: "The text explains: 'She goes to bed early because she starts work early again the next day.'"
+            },
+            {
+                id: 10,
+                question: "10. How does Sarah feel about her job?",
+                options: ["She feels sad and tired", "She wants to quit", "She is very happy with her job", "She is indifferent"],
+                answer: "She is very happy with her job",
+                explanation: "The final sentence concludes: 'Sarah is very happy with her job!'"
+            }
+        ];
+
+        let appState = {
+            activeTab: 'theory',
+            userAnswers: {}, // id: selectedAnswer
+            readingAnswers: {}, // id: selectedOption
+            streak: 1,
+            score: 0,
+            currentTransIdx: 0,
+            builtTransWords: [],
+            completedTranslations: 0,
+            isDirectTyping: false
+        };
+
+        // Utility: Fisher-Yates Array Shuffle Algorithm
+        function shuffleArray(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
+
+        // Initialize App on DOM Load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            renderExercises();
+            renderTranslationCard();
+            renderReadingQuestions();
+            updateStatsUI();
+            updateStreakOnLoad();
+        });
+
+        // Local Storage Persistence
+        function saveState() {
+            try {
+                localStorage.setItem('idioslinguas_present_simple_state', JSON.stringify({
+                    userAnswers: appState.userAnswers,
+                    readingAnswers: appState.readingAnswers,
+                    streak: appState.streak,
+                    score: appState.score,
+                    currentTransIdx: appState.currentTransIdx,
+                    completedTranslations: appState.completedTranslations
+                }));
+            } catch(e) { console.error("Storage save error", e); }
+        }
+
+        function loadState() {
+            try {
+                const saved = localStorage.getItem('idioslinguas_present_simple_state');
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    appState.userAnswers = parsed.userAnswers || {};
+                    appState.readingAnswers = parsed.readingAnswers || {};
+                    appState.streak = parsed.streak || 1;
+                    appState.score = parsed.score || 0;
+                    appState.currentTransIdx = parsed.currentTransIdx || 0;
+                    appState.completedTranslations = parsed.completedTranslations || 0;
+                }
+            } catch(e) { console.error("Load state error", e); }
+        }
+
+        function updateStreakOnLoad() {
+            if (appState.streak === 0) appState.streak = 1;
+            document.getElementById('header-streak').textContent = `Racha: ${appState.streak} día${appState.streak > 1 ? 's' : ''}`;
+            document.getElementById('header-score').textContent = `${appState.score} pts`;
+        }
+
+        // TAB SWITCHER
+        function switchTab(tabName) {
+            appState.activeTab = tabName;
+            
+            // Hide all tab contents
+            const tabs = ['theory', 'exercises', 'translation', 'reading', 'stats'];
+            tabs.forEach(t => {
+                const content = document.getElementById(`tab-${t}-content`);
+                if (content) content.classList.add('hidden');
+            });
+
+            // Show selected tab content
+            const activeContent = document.getElementById(`tab-${tabName}-content`);
+            if (activeContent) activeContent.classList.remove('hidden');
+
+            // Update Desktop Tab Buttons
+            tabs.forEach(id => {
+                const btn = document.getElementById(`nav-${id}`);
+                if (btn) {
+                    if (id === tabName) {
+                        btn.className = 'tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-white text-brand-navy shadow-sm border border-slate-200';
+                    } else {
+                        btn.className = 'tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium text-slate-600 hover:text-brand-navy transition-all flex items-center gap-2';
+                    }
+                }
+            });
+
+            if (tabName === 'stats') {
+                updateStatsUI();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // -------------------------------------------------------------
+        // EXERCISES FUNCTIONS
+        // -------------------------------------------------------------
+        function renderExercises(filter = 'all') {
+            const container = document.getElementById('exercises-container');
+            container.innerHTML = '';
+
+            const filteredData = filter === 'all' 
+                ? EXERCISES_DATA 
+                : EXERCISES_DATA.filter(ex => ex.category === filter);
+
+            filteredData.forEach(ex => {
+                const card = document.createElement('div');
+                card.id = `ex-card-${ex.id}`;
+                card.className = 'bg-white rounded-2xl p-5 border border-slate-200 shadow-xs flex flex-col justify-between gap-3 transition hover:shadow-md';
+
+                const selected = appState.userAnswers[ex.id];
+                const isAnswered = selected !== undefined;
+                const isCorrect = isAnswered && selected === ex.answer;
+
+                let borderClass = 'border-slate-200';
+                if (isAnswered) {
+                    borderClass = isCorrect ? 'border-emerald-500 bg-emerald-50/20' : 'border-rose-400 bg-rose-50/20';
+                }
+                card.classList.add(...borderClass.split(' '));
+
+                let optionsHTML = '';
+                const labels = ['A', 'B', 'C', 'D'];
+                ex.options.forEach((opt, optIdx) => {
+                    const isSelectedOpt = selected === opt;
+                    let optBtnStyle = 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100';
+                    if (isAnswered) {
+                        if (opt === ex.answer) {
+                            optBtnStyle = 'bg-emerald-600 text-white border-emerald-600 font-bold';
+                        } else if (isSelectedOpt && !isCorrect) {
+                            optBtnStyle = 'bg-rose-500 text-white border-rose-500 font-bold';
+                        }
+                    } else if (isSelectedOpt) {
+                        optBtnStyle = 'bg-brand-blue text-white border-brand-blue font-bold';
+                    }
+
+                    optionsHTML += `
+                        <button onclick="selectOption(${ex.id}, ${optIdx})" 
+                                class="w-full text-left px-3 py-2 rounded-xl border text-xs font-medium transition flex items-center justify-between ${optBtnStyle}">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-md bg-black/10 text-[10px] font-bold flex items-center justify-center">${labels[optIdx]}</span>
+                                <span>${opt}</span>
+                            </div>
+                            ${isSelectedOpt && isCorrect ? '<i class="fa-solid fa-circle-check text-white"></i>' : ''}
+                            ${isSelectedOpt && !isCorrect ? '<i class="fa-solid fa-circle-xmark text-white"></i>' : ''}
+                        </button>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+                            <span>Ejercicio #${ex.id}</span>
+                            <span class="text-brand-teal uppercase tracking-wider text-[10px]">${ex.category}</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-sm leading-snug">
+                            ${ex.question}
+                        </h4>
+                    </div>
+
+                    <div class="space-y-1.5 pt-2">
+                        ${optionsHTML}
+                    </div>
+
+                    <div id="ex-feedback-${ex.id}" class="${isAnswered ? 'block' : 'hidden'} text-xs p-2.5 rounded-xl ${isCorrect ? 'bg-emerald-100/70 text-emerald-900 border border-emerald-200' : 'bg-rose-100/70 text-rose-900 border border-rose-200'}">
+                        <div class="font-bold flex items-center gap-1.5">
+                            <i class="fa-solid ${isCorrect ? 'fa-check text-emerald-600' : 'fa-circle-info text-rose-600'}"></i>
+                            <span>${isCorrect ? '¡Correcto!' : 'Respuesta Incorrecta'}</span>
+                        </div>
+                        <p class="mt-0.5 opacity-90">${ex.hint}</p>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            updateExerciseProgress();
+        }
+
+        function selectOption(exId, optIdx) {
+            const exObj = EXERCISES_DATA.find(e => e.id === exId);
+            if (!exObj) return;
+            const selectedOpt = exObj.options[optIdx];
+            appState.userAnswers[exId] = selectedOpt;
+            if (selectedOpt === exObj.answer) {
+                appState.score += 10;
+            }
+            saveState();
+            renderExercises(currentFilter);
+        }
+
+        let currentFilter = 'all';
+        function filterExercises(category) {
+            currentFilter = category;
+            document.querySelectorAll('.ex-filter-btn').forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.className = 'ex-filter-btn px-4 py-2 rounded-xl bg-brand-navy text-white shadow-xs';
+                } else {
+                    btn.className = 'ex-filter-btn px-4 py-2 rounded-xl bg-white text-slate-600 hover:bg-slate-100 border border-slate-200';
+                }
+            });
+            renderExercises(category);
+        }
+
+        function checkAllExercises() {
+            let correctCount = 0;
+            EXERCISES_DATA.forEach(ex => {
+                if (appState.userAnswers[ex.id] === ex.answer) {
+                    correctCount++;
+                }
+            });
+            updateExerciseProgress();
+            showToast(`Has respondido correctamente ${correctCount} de 40 ejercicios.`, correctCount >= 30 ? 'success' : 'info');
+        }
+
+        function resetExercises() {
+            appState.userAnswers = {};
+            saveState();
+            renderExercises(currentFilter);
+            showToast('Se han reiniciado los ejercicios.', 'info');
+        }
+
+        function updateExerciseProgress() {
+            let count = 0;
+            EXERCISES_DATA.forEach(ex => {
+                if (appState.userAnswers[ex.id] === ex.answer) {
+                    count++;
+                }
+            });
+            const pct = Math.round((count / 40) * 100);
+            document.getElementById('ex-progress-text').textContent = `${count} de 40 Resueltos Correctamente (${pct}%)`;
+            document.getElementById('ex-progress-bar').style.width = `${pct}%`;
+            document.getElementById('badge-exercises').textContent = `${count}/40`;
+        }
+
+        // -------------------------------------------------------------
+        // TRANSLATION STUDIO FUNCTIONS
+        // -------------------------------------------------------------
+        function renderTranslationCard() {
+            const currentObj = TRANSLATION_DATA[appState.currentTransIdx];
+            if (!currentObj) return;
+
+            document.getElementById('trans-current-idx').textContent = `${appState.currentTransIdx + 1} / ${TRANSLATION_DATA.length}`;
+            document.getElementById('trans-spanish-text').textContent = currentObj.spanish;
+            document.getElementById('trans-hint').textContent = `💡 Pista: ${currentObj.hint}`;
+
+            // Reset build zone
+            appState.builtTransWords = [];
+            renderBuildZone();
+
+            // Shuffle words explicitly so they are NEVER in correct order
+            let randomizedWords = shuffleArray(currentObj.words);
+            // Ensure by check that it doesn't match original order by coincidence
+            if (randomizedWords.join(' ') === currentObj.words.join(' ')) {
+                randomizedWords.reverse();
+            }
+            renderWordBank(randomizedWords);
+
+            // Hide feedback
+            const feedbackBox = document.getElementById('trans-feedback-box');
+            feedbackBox.classList.add('hidden');
+        }
+
+        function renderBuildZone() {
+            const buildZone = document.getElementById('trans-build-zone');
+            if (appState.builtTransWords.length === 0) {
+                buildZone.innerHTML = `
+                    <span id="trans-placeholder" class="text-slate-400 text-sm italic">
+                        Haz clic en las fichas desordenadas para armar la oración...
+                    </span>
+                `;
+                return;
+            }
+
+            buildZone.innerHTML = '';
+            appState.builtTransWords.forEach((word, idx) => {
+                const chip = document.createElement('button');
+                chip.onclick = () => removeWordFromBuild(idx);
+                chip.className = 'bg-brand-navy text-white text-xs font-bold px-3 py-1.5 rounded-xl shadow-xs hover:bg-rose-600 transition flex items-center gap-1 animate-fade-in';
+                chip.innerHTML = `<span>${word}</span> <i class="fa-solid fa-xmark text-[10px]"></i>`;
+                buildZone.appendChild(chip);
+            });
+        }
+
+        function renderWordBank(shuffledWords) {
+            const wordBank = document.getElementById('trans-word-bank');
+            wordBank.innerHTML = '';
+
+            shuffledWords.forEach(word => {
+                const chip = document.createElement('button');
+                chip.onclick = () => addWordToBuild(word, chip);
+                chip.className = 'word-bank-chip bg-white border border-slate-300 text-slate-800 hover:border-brand-teal hover:text-brand-teal text-xs font-bold px-3 py-2 rounded-xl transition shadow-2xs';
+                chip.textContent = word;
+                wordBank.appendChild(chip);
+            });
+        }
+
+        function addWordToBuild(word, element) {
+            appState.builtTransWords.push(word);
+            renderBuildZone();
+            element.classList.add('opacity-40', 'pointer-events-none');
+        }
+
+        function removeWordFromBuild(index) {
+            const removedWord = appState.builtTransWords.splice(index, 1)[0];
+            renderBuildZone();
+
+            const chips = document.querySelectorAll('.word-bank-chip');
+            for (let chip of chips) {
+                if (chip.textContent === removedWord && chip.classList.contains('pointer-events-none')) {
+                    chip.classList.remove('opacity-40', 'pointer-events-none');
+                    break;
+                }
+            }
+        }
+
+        function clearTranslationBuild() {
+            appState.builtTransWords = [];
+            renderBuildZone();
+            const currentObj = TRANSLATION_DATA[appState.currentTransIdx];
+            if (currentObj) {
+                let randomizedWords = shuffleArray(currentObj.words);
+                if (randomizedWords.join(' ') === currentObj.words.join(' ')) {
+                    randomizedWords.reverse();
+                }
+                renderWordBank(randomizedWords);
+            }
+        }
+
+        function toggleTypingMode() {
+            appState.isDirectTyping = !appState.isDirectTyping;
+            const directInput = document.getElementById('trans-direct-input');
+            const btnText = document.querySelector('#toggle-mode-btn span');
+
+            if (appState.isDirectTyping) {
+                directInput.classList.remove('hidden');
+                btnText.textContent = 'Cambiar a modo fichas de palabras';
+            } else {
+                directInput.classList.add('hidden');
+                btnText.textContent = '¿Prefieres escribir directamente con el teclado?';
+            }
+        }
+
+        function checkTranslationAnswer() {
+            const currentObj = TRANSLATION_DATA[appState.currentTransIdx];
+            let userSentence = '';
+
+            if (appState.isDirectTyping) {
+                userSentence = document.getElementById('trans-direct-input').value.trim();
+            } else {
+                userSentence = appState.builtTransWords.join(' ').trim();
+            }
+
+            if (!userSentence) {
+                showToast('Construye o escribe una oración antes de comprobar.', 'warning');
+                return;
+            }
+
+            const clean = str => str.toLowerCase().replace(/[.,/#!$%^&*;:{}=\-_`~()?]/g, "").replace(/\s+/g, " ").trim();
+
+            const userClean = clean(userSentence);
+            const targetClean = clean(currentObj.english);
+            const altClean = currentObj.altEnglish ? clean(currentObj.altEnglish) : null;
+
+            const isCorrect = (userClean === targetClean) || (altClean && userClean === altClean);
+
+            const feedbackBox = document.getElementById('trans-feedback-box');
+            const feedbackTitle = document.getElementById('trans-feedback-title');
+            const feedbackMsg = document.getElementById('trans-feedback-msg');
+
+            feedbackBox.classList.remove('hidden');
+
+            if (isCorrect) {
+                feedbackBox.className = 'p-4 rounded-xl border bg-emerald-50 border-emerald-300 text-emerald-900 space-y-2 text-sm animate-fade-in';
+                feedbackTitle.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-lg"></i> ¡Excelente Trabajo! Traducción Correcta`;
+                feedbackMsg.textContent = `Oración oficial: "${currentObj.english}".`;
+                appState.score += 20;
+                appState.completedTranslations = Math.max(appState.completedTranslations, appState.currentTransIdx + 1);
+            } else {
+                feedbackBox.className = 'p-4 rounded-xl border bg-rose-50 border-rose-300 text-rose-900 space-y-2 text-sm animate-fade-in';
+                feedbackTitle.innerHTML = `<i class="fa-solid fa-triangle-exclamation text-rose-600 text-lg"></i> Revisa tu construcción`;
+                feedbackMsg.innerHTML = `Tu respuesta: <em>"${userSentence}"</em>.<br>La respuesta esperada es: <strong>"${currentObj.english}"</strong>.`;
+            }
+
+            saveState();
+            updateHeaderStats();
+        }
+
+        function nextTranslationSentence() {
+            if (appState.currentTransIdx < TRANSLATION_DATA.length - 1) {
+                appState.currentTransIdx++;
+            } else {
+                appState.currentTransIdx = 0;
+                showToast('¡Has completado todas las oraciones del taller!', 'success');
+            }
+            document.getElementById('trans-direct-input').value = '';
+            saveState();
+            renderTranslationCard();
+        }
+
+        function playTranslationAudio() {
+            const currentObj = TRANSLATION_DATA[appState.currentTransIdx];
+            if (currentObj) {
+                speakText(currentObj.english);
+            }
+        }
+
+        // -------------------------------------------------------------
+        // READING COMPREHENSION FUNCTIONS
+        // -------------------------------------------------------------
+        function renderReadingQuestions() {
+            const container = document.getElementById('reading-questions-container');
+            container.innerHTML = '';
+
+            READING_QUESTIONS.forEach(q => {
+                const card = document.createElement('div');
+                card.id = `rq-card-${q.id}`;
+                card.className = 'bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3 transition';
+
+                const selected = appState.readingAnswers[q.id];
+                const isAnswered = selected !== undefined;
+                const isCorrect = isAnswered && selected === q.answer;
+
+                if (isAnswered) {
+                    card.className = isCorrect 
+                        ? 'bg-emerald-50/50 border-2 border-emerald-500 rounded-2xl p-5 space-y-3' 
+                        : 'bg-rose-50/50 border-2 border-rose-400 rounded-2xl p-5 space-y-3';
+                }
+
+                let optionsHTML = '';
+                q.options.forEach((opt, idx) => {
+                    const isSelected = selected === opt;
+                    let btnClass = 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100';
+
+                    if (isAnswered) {
+                        if (opt === q.answer) {
+                            btnClass = 'bg-emerald-600 text-white font-bold border-emerald-600';
+                        } else if (isSelected && !isCorrect) {
+                            btnClass = 'bg-rose-500 text-white font-bold border-rose-500';
+                        }
+                    } else if (isSelected) {
+                        btnClass = 'bg-purple-600 text-white font-bold border-purple-600';
+                    }
+
+                    optionsHTML += `
+                        <button onclick="selectReadingOption(${q.id}, '${opt.replace(/'/g, "\\'")}')" 
+                                class="w-full text-left px-3.5 py-2.5 rounded-xl border text-xs font-medium transition flex items-center justify-between ${btnClass}">
+                            <span>${opt}</span>
+                            ${isSelected && isCorrect ? '<i class="fa-solid fa-circle-check text-white"></i>' : ''}
+                            ${isSelected && !isCorrect ? '<i class="fa-solid fa-circle-xmark text-white"></i>' : ''}
+                        </button>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <h4 class="font-bold text-slate-800 text-sm leading-snug">
+                        ${q.question}
+                    </h4>
+                    <div class="space-y-1.5">
+                        ${optionsHTML}
+                    </div>
+                    ${isAnswered ? `
+                        <div class="p-2.5 rounded-xl text-xs ${isCorrect ? 'bg-emerald-100/80 text-emerald-900' : 'bg-rose-100/80 text-rose-900'}">
+                            <span class="font-bold">${isCorrect ? 'Correct!' : 'Incorrect'}</span> - ${q.explanation}
+                        </div>
+                    ` : ''}
+                `;
+
+                container.appendChild(card);
+            });
+        }
+
+        function selectReadingOption(qId, selectedOpt) {
+            appState.readingAnswers[qId] = selectedOpt;
+            const qObj = READING_QUESTIONS.find(q => q.id === qId);
+            if (qObj && selectedOpt === qObj.answer) {
+                appState.score += 15;
+            }
+            saveState();
+            renderReadingQuestions();
+        }
+
+        function checkReadingAnswers() {
+            let correct = 0;
+            READING_QUESTIONS.forEach(q => {
+                if (appState.readingAnswers[q.id] === q.answer) correct++;
+            });
+            showToast(`Reading score: ${correct} of 10 correct answers!`, correct >= 7 ? 'success' : 'info');
+        }
+
+        function resetReadingAnswers() {
+            appState.readingAnswers = {};
+            saveState();
+            renderReadingQuestions();
+            showToast('Reading answers reset.', 'info');
+        }
+
+        // Speech Synthesis API
+        function speakText(text) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'en-US';
+                utterance.rate = 0.9;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                showToast('Tu navegador no soporta síntesis de voz.', 'info');
+            }
+        }
+
+        // -------------------------------------------------------------
+        // STATS & PROGRESS FUNCTIONS
+        // -------------------------------------------------------------
+        function updateStatsUI() {
+            let correctEx = 0;
+            EXERCISES_DATA.forEach(ex => {
+                if (appState.userAnswers[ex.id] === ex.answer) correctEx++;
+            });
+
+            let correctReading = 0;
+            READING_QUESTIONS.forEach(q => {
+                if (appState.readingAnswers[q.id] === q.answer) correctReading++;
+            });
+
+            const accuracy = Math.round((correctEx / 40) * 100);
+
+            document.getElementById('stat-completed-count').textContent = `${correctEx} / 40`;
+            document.getElementById('stat-accuracy').textContent = `${accuracy}%`;
+            document.getElementById('stat-streak-days').textContent = `${appState.streak} Día${appState.streak > 1 ? 's' : ''}`;
+            document.getElementById('stat-reading-count').textContent = `${correctReading} / 10`;
+
+            // Certificate button status
+            const certBtn = document.getElementById('cert-download-btn');
+            if (accuracy >= 75) {
+                certBtn.disabled = false;
+                certBtn.className = 'bg-brand-teal hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg flex items-center gap-2 mx-auto cursor-pointer animate-pulse-subtle text-xs sm:text-sm';
+                certBtn.innerHTML = `<i class="fa-solid fa-file-certificate text-amber-300"></i> <span>Descargar / Imprimir Certificado</span>`;
+            } else {
+                certBtn.disabled = true;
+                certBtn.className = 'bg-slate-300 text-slate-500 font-bold px-6 py-3 rounded-xl transition cursor-not-allowed flex items-center gap-2 mx-auto text-xs sm:text-sm';
+                certBtn.innerHTML = `<i class="fa-solid fa-lock"></i> <span>Desbloquear Certificado (Requiere 75%+ Precisión)</span>`;
+            }
+
+            updateHeaderStats();
+        }
+
+        function updateHeaderStats() {
+            document.getElementById('header-score').textContent = `${appState.score} pts`;
+        }
+
+        function printCertificate() {
+            const printWindow = window.open('', '_blank');
+            const dateStr = new Date().toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Certificado - Idíoslinguas</title>
+                    <style>
+                        body { font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; padding: 40px; background: #f8fafc; }
+                        .cert-border { border: 10px double #16467d; padding: 40px; background: #ffffff; max-width: 800px; margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 20px; }
+                        h1 { color: #16467d; font-size: 38px; margin-bottom: 5px; }
+                        h3 { color: #2a9d8f; font-size: 20px; letter-spacing: 2px; text-transform: uppercase; margin-top: 0; }
+                        p { font-size: 18px; color: #334155; line-height: 1.6; }
+                        .badge { background: #ffb703; color: #0f172a; font-weight: bold; padding: 10px 20px; border-radius: 30px; display: inline-block; margin: 20px 0; }
+                    </style>
+                </head>
+                <body>
+                    <div class="cert-border">
+                        <h1>idíoslinguas 🍃</h1>
+                        <h3>ACADEMIA DE IDIOMAS</h3>
+                        <hr style="border: 0; border-top: 1px solid #cbd5e1; margin: 25px 0;">
+                        <p style="font-size: 22px; font-weight: bold; color: #0f172a;">CERTIFICADO DE APROBACIÓN</p>
+                        <p>Se otorga el presente diploma al estudiante por haber demostrado el dominio satisfactorio de la gramática y uso práctico del:</p>
+                        <h2 style="font-size: 32px; color: #0077b6; margin: 15px 0;">PRESENT SIMPLE IN ENGLISH</h2>
+                        <div class="badge">Acreditación Nivel A1-A2</div>
+                        <p>Completado con éxito el módulo de 40 ejercicios interactivos, taller de traducción y comprensión lectora A1.</p>
+                        <p style="margin-top: 30px; font-size: 14px; color: #64748b;">Fecha de emisión: ${dateStr}</p>
+                    </div>
+                    <script>
+                        window.onload = function() { window.print(); }
+                    <\/script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        function resetAllProgress() {
+            localStorage.removeItem('idioslinguas_present_simple_state');
+            appState.userAnswers = {};
+            appState.readingAnswers = {};
+            appState.score = 0;
+            appState.streak = 1;
+            appState.currentTransIdx = 0;
+            appState.completedTranslations = 0;
+            renderExercises();
+            renderTranslationCard();
+            renderReadingQuestions();
+            updateStatsUI();
+            showToast('Se ha borrado todo el historial de progreso.', 'info');
+        }
+
+        // Custom Toast Notification System
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            let bgClass = 'bg-slate-900 text-white';
+            if (type === 'success') bgClass = 'bg-emerald-600 text-white';
+            if (type === 'warning') bgClass = 'bg-amber-500 text-slate-900';
+            if (type === 'info') bgClass = 'bg-brand-navy text-white';
+
+            toast.className = `fixed bottom-5 right-5 z-50 ${bgClass} font-bold px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 text-xs sm:text-sm animate-bounce transition-all`;
+            toast.innerHTML = `
+                <i class="fa-solid ${type === 'success' ? 'fa-circle-check' : 'fa-circle-info'}"></i>
+                <span>${message}</span>
+            `;
+
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
